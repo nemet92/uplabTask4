@@ -5,5 +5,9 @@ class AppText {
   static const elevatedButtonText = "Get Starded";
   static const String appTitle = "Londan Uk";
   static const String helloSam = "Hello Sam";
-  static const String conatinerText = 'Join';
+  static const String conatinerText = 'Join Our Animal Lovers Coummunity.';
+//SECONDPAGE
+  static const String elevatedButtonBoxdecoration = "Join Now";
+  static const String catagoryText = "Catagories";
+  static const String catagoryPopularText = "Populer Items";
 }

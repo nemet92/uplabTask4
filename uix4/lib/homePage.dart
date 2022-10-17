@@ -51,19 +51,21 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.1,
-                      width: MediaQuery.of(context).size.width * 50,
+                      width: MediaQuery.of(context).size.width * 0.80,
                       child: CustomElevatedButton(
+                        icon: AppPath.elevateButtonIcon,
+                        borderRadius: AppSize.elevatedButtonRadius50,
+                        color: AppColor.elevateButtonColor,
+                        elevatedButtonText:
+                            const Text(AppText.elevatedButtonText),
                         onPressed: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const SecondPage()));
                         },
-                        icon: AppPath.elevatebuttonIcon,
-                        elevatebuttonColor: AppColor.elevatebuttonColor,
-                        elevatedButtonText: AppText.elevatedButtonText,
                       ),
-                    )
+                    ),
                   ],
                 ),
               )),
