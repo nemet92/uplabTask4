@@ -6,6 +6,7 @@ import 'package:uix4/const/appText.dart';
 import 'package:uix4/secondPage.dart';
 import 'package:uix4/widget/CustomElevatedButton.dart';
 import 'package:uix4/widget/CustomText.dart';
+import 'package:kartal/kartal.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -50,8 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: AppSize.sizedBox,
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.1,
-                      width: MediaQuery.of(context).size.width * 0.80,
+                      height: context.mediaQuery.size.height * 0.1,
+                      width: context.mediaQuery.size.height * 0.40,
                       child: CustomElevatedButton(
                         icon: AppPath.elevateButtonIcon,
                         borderRadius: AppSize.elevatedButtonRadius50,
@@ -59,10 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         elevatedButtonText:
                             const Text(AppText.elevatedButtonText),
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const SecondPage()));
+                          context.navigateToPage(const SecondPage());
                         },
                       ),
                     ),

@@ -1,28 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:kartal/kartal.dart';
+import 'package:uix4/const/appColor.dart';
+import 'package:uix4/const/appSize.dart';
 
-class CustomContainer extends StatelessWidget {
-  const CustomContainer({
+class CustomCatagoryContainer extends StatelessWidget {
+  const CustomCatagoryContainer({
+    required this.icon,
     Key? key,
-    required this.heigth,
-    required this.width,
-    required this.color,
-    required this.radius,
-    this.padding,
-    this.child,
   }) : super(key: key);
-  final double? heigth;
-  final double? width;
-  final Color? color;
-  final dynamic radius;
-  final EdgeInsetsGeometry? padding;
-  final Widget? child;
+  final Widget? icon;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: heigth,
-      width: width,
-      decoration: BoxDecoration(color: color, borderRadius: radius),
-      child: child,
+      height: context.mediaQuery.size.height * 0.1,
+      width: context.mediaQuery.size.width * 0.2,
+      decoration: const BoxDecoration(
+          color: AppColor.boxDecorationColor,
+          borderRadius: AppSize.boxDecorationRadius50),
+      child: icon,
     );
   }
 }

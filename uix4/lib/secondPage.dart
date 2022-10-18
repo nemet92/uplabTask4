@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:kartal/kartal.dart';
 import 'package:uix4/const/appColor.dart';
 import 'package:uix4/const/appPath.dart';
 import 'package:uix4/const/appSize.dart';
 import 'package:uix4/const/appText.dart';
 import 'package:uix4/widget/CustomContainer.dart';
+import 'package:uix4/widget/CustomItemsContainer.dart';
 import 'package:uix4/widget/CustomElevatedButton.dart';
 import 'package:uix4/widget/CustomText.dart';
 
@@ -39,11 +41,12 @@ class _SecondPageState extends State<SecondPage> {
               fontWeight: FontWeight.bold,
             ),
             CustomSizedBox(25),
-            CustomContainer(
-              radius: AppSize.boxDecorationPadding,
-              heigth: MediaQuery.of(context).size.height * 0.3,
+            Container(
               width: double.infinity,
-              color: AppColor.boxDecorationColor,
+              height: context.mediaQuery.size.height * 0.3,
+              decoration: const BoxDecoration(
+                  color: AppColor.boxDecorationColor,
+                  borderRadius: AppSize.boxDecorationPadding),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -56,8 +59,8 @@ class _SecondPageState extends State<SecondPage> {
                     ),
                     CustomSizedBox(60),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.08,
-                      width: MediaQuery.of(context).size.width * 0.35,
+                      height: context.mediaQuery.size.height * 0.08,
+                      width: context.mediaQuery.size.width * 0.35,
                       child: CustomElevatedButton(
                           borderRadius: AppSize.boxDecorationElevatedButton,
                           elevatedButtonText:
@@ -78,34 +81,18 @@ class _SecondPageState extends State<SecondPage> {
             CustomSizedBox(15),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CustomContainer(
-                  color: AppColor.boxDecorationColor,
-                  heigth: MediaQuery.of(context).size.height * 0.1,
-                  width: MediaQuery.of(context).size.width * 0.1,
-                  radius: AppSize.boxDecorationRadius50,
-                  child: AppPath.iconCatagories,
+              children: const [
+                CustomCatagoryContainer(
+                  icon: AppPath.iconCatagories,
                 ),
-                CustomContainer(
-                  color: AppColor.boxDecorationColor,
-                  heigth: MediaQuery.of(context).size.height * 0.1,
-                  width: MediaQuery.of(context).size.width * 0.1,
-                  radius: AppSize.boxDecorationRadius50,
-                  child: AppPath.iconCatagories,
+                CustomCatagoryContainer(
+                  icon: AppPath.iconCatagories,
                 ),
-                CustomContainer(
-                  color: AppColor.boxDecorationColor,
-                  heigth: MediaQuery.of(context).size.height * 0.1,
-                  width: MediaQuery.of(context).size.width * 0.1,
-                  radius: AppSize.boxDecorationRadius50,
-                  child: AppPath.iconCatagories,
+                CustomCatagoryContainer(
+                  icon: AppPath.iconCatagories,
                 ),
-                CustomContainer(
-                  color: AppColor.boxDecorationColor,
-                  heigth: MediaQuery.of(context).size.height * 0.1,
-                  width: MediaQuery.of(context).size.width * 0.1,
-                  radius: AppSize.boxDecorationRadius50,
-                  child: AppPath.iconCatagories,
+                CustomCatagoryContainer(
+                  icon: AppPath.iconCatagories,
                 ),
               ],
             ),
@@ -118,28 +105,14 @@ class _SecondPageState extends State<SecondPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                CustomContainer(
-                    heigth: MediaQuery.of(context).size.height * 0.2,
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    color: AppColor.boxDecorationColor,
-                    radius: AppSize.boxDecorationRadius50,
-                    child: Padding(
-                      padding: const EdgeInsets.all(1),
-                      child: Image.asset(
-                        AppPath.iconCatagoriesPopuler,
-                      ),
-                    )),
-                CustomContainer(
-                    heigth: MediaQuery.of(context).size.height * 0.2,
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    color: AppColor.boxDecorationColor,
-                    radius: AppSize.boxDecorationRadius50,
-                    child: Padding(
-                      padding: const EdgeInsets.all(1),
-                      child: Image.asset(
-                        AppPath.iconCatagoriesPopuler,
-                      ),
-                    ))
+                CustomItemsContainer(
+                    child: Image.asset(
+                  AppPath.iconCatagoriesPopuler,
+                )),
+                CustomItemsContainer(
+                    child: Image.asset(
+                  AppPath.iconCatagoriesPopuler,
+                ))
               ],
             ),
           ],
